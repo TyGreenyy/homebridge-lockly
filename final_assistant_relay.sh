@@ -5,6 +5,10 @@ set -x
 # Exit immediately if a command exits with a non-zero status
 set -e
 
+# Lock Pin Code
+pincode="3357"
+echo $pincode;
+
 # Check if the first parameter to this script was "Get" for getting an accessory's
 # specific attribute.
 if [ "$1" = "Get" ]; then
@@ -78,14 +82,11 @@ if [ "$1" = "Set" ]; then
 		 # Execute the off command
 		 # ps4-waker standby >> /dev/null 2>&1
 
-		 # curl -v -o "assistantresponse.txt" "http://192.168.86.39:3000/assistant" -d '{"command":"unlock the front door", "user":"Assistant", "broadcast": false, "converse":false}' -H "Content-Type: application/json";
-		 echo "lock line 81"
+		 curl -v -o "assistantresponse.txt" "http://192.168.86.39:3000/assistant" -d '{"command":"unlock the front door", "user":"Assistant", "broadcast": false, "converse":false}' -H "Content-Type: application/json";
 
 		 Sleep .5
 
-		 # curl -v -o "assistantresponse.txt" "http://192.168.86.39:3000/assistant" -d '{"command":"3357", "user":"Assistant", "broadcast": false, "converse":false}' -H "Content-Type: application/json";
-
-		 echo "lock line 87"
+		 curl -v -o "assistantresponse.txt" "http://192.168.86.39:3000/assistant" -d '{"command":"$pincode", "user":"Assistant", "broadcast": false, "converse":false}' -H "Content-Type: application/json";
 
 		 # keep the result of the on/off command
 		 rc=$?
