@@ -7,7 +7,6 @@ set -e
 
 # Lock Pin Code
 pincode="3357"
-echo $pincode;
 
 # Check if the first parameter to this script was "Get" for getting an accessory's
 # specific attribute.
