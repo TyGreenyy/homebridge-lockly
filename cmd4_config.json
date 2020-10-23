@@ -1,17 +1,19 @@
-{
-	"platform": "Cmd4",
-	"name": "Cmd4",
-	"outputConstants": false,
-	"accessories": [{
-		"type": "LockMechanism",
-		"displayName": "Lock",
-		"lockCurrentState": "SECURED",
-		"lockTargetState": "SECURED",
-		"name": "Lock",
-		"Manufacturer": "Lockly",
-		"Model": "PGD728F",
-		"SerialNumber": "4a0043003138470337383135",
-		"stateChangeResponseTime": 12,
-		"state_cmd": "/var/lib/homebridge/Cmd4Scripts/locklyar1.sh"
-	}]
-}
+        {
+            "platform": "Cmd4",
+            "name": "Cmd4",
+            "outputConstants": false,
+            "accessories": [
+                {
+                    "type": "LockMechanism",
+                    "displayName": "Lock",
+                    "lockCurrentState": "SECURED",
+                    "lockTargetState": "SECURED",
+                    "name": "Lock",
+                    "Manufacturer": "Lockly",
+                    "Model": "PGD728F",
+                    "SerialNumber": "4a0043003138470337383135",
+                    "stateChangeResponseTime": 12,
+                    "state_cmd": "bash /var/lib/homebridge-three/Cmd4Scripts/Lock.sh"
+                }
+            ]
+        }
